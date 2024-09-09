@@ -11,16 +11,21 @@ public struct Board {
     }
 
     public mutating func resetToStartPosition() {
+        currentPlayer = .white
+        pieces = Array(repeating: Array(repeating: nil, count: 8), count: 8)
+        
         for row in 0..<3 {
             for col in stride(from: (row % 2 == 0 ? 1 : 0), to: 8, by: 2) {
                 pieces[row][col] = Piece(color: .white, type: .man)
             }
         }
+        
         for row in 5..<8 {
             for col in stride(from: (row % 2 == 0 ? 1 : 0), to: 8, by: 2) {
                 pieces[row][col] = Piece(color: .black, type: .man)
             }
         }
+        
     }
 
     public func isValidMove(_ move: Move) -> Bool {
