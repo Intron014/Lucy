@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.8
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -8,9 +8,6 @@ let package = Package(
     products: [
         .executable(name: "LucyEngine", targets: ["LucyEngine"]),
         .library(name: "LucyCore", targets: ["LucyCore"])
-    ],
-    dependencies: [
-    .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0")
     ],
     targets: [
         .executableTarget(
